@@ -1,0 +1,51 @@
+{
+  "name": "localpdfsign",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "format": "prettier --write src tests infra scripts .github index.html README.md",
+    "check": "tsc -b && oxlint",
+    "predev": "node scripts/copy-pdf-assets.mjs",
+    "prebuild": "node scripts/copy-pdf-assets.mjs"
+  },
+  "dependencies": {
+    "@fontsource/allura": "^5.3.0",
+    "@fontsource/caveat": "^5.3.0",
+    "@fontsource/dancing-script": "^5.3.0",
+    "@fontsource/great-vibes": "^5.3.0",
+    "@fontsource/homemade-apple": "^5.3.0",
+    "@fontsource/italianno": "^5.3.0",
+    "@fontsource/kaushan-script": "^5.3.0",
+    "@fontsource/pacifico": "^5.3.0",
+    "@fontsource/parisienne": "^5.3.0",
+    "@fontsource/sacramento": "^5.3.0",
+    "@fontsource/satisfy": "^5.3.0",
+    "@fontsource/yellowtail": "^5.3.0",
+    "@libpdf/core": "^0.4.2",
+    "asn1js": "^3.0.10",
+    "lucide-react": "^1.41.0",
+    "pdfjs-dist": "^6.3.289",
+    "pkijs": "^3.4.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.0.8",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "prettier": "^3.9.6",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0"
+  },
+  "license": "MIT"
+}

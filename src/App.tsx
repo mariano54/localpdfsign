@@ -13,6 +13,7 @@ import {
   X,
 } from "lucide-react";
 import "./App.css";
+import EditorBoundary from "./EditorBoundary";
 const Editor = lazy(() => import("./Editor"));
 export default function App() {
   const [file, setFile] = useState<File | null>(null),
@@ -59,16 +60,18 @@ export default function App() {
         </nav>
       </header>
       {file ? (
-        <Suspense
-          fallback={
-            <div className="loading">
-              <span className="spinner" />
-              Opening your local workspace…
-            </div>
-          }
-        >
-          <Editor file={file} onClose={() => setFile(null)} />
-        </Suspense>
+        <EditorBoundary>
+          <Suspense
+            fallback={
+              <div className="loading">
+                <span className="spinner" />
+                Opening your local workspace…
+              </div>
+            }
+          >
+            <Editor file={file} onClose={() => setFile(null)} />
+          </Suspense>
+        </EditorBoundary>
       ) : (
         <main>
           <section className="hero">

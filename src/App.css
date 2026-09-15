@@ -445,3 +445,10 @@ footer .text-button {
     display: none;
   }
 }
+.editor-load-error {
+  max-width: 560px;
+  min-height: 50vh;
+  margin: auto;
+  padding: 80px 24px;
+  text-align: center;
+}

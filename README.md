@@ -24,6 +24,12 @@ npm run check
 npm run build
 ```
 
+Development runs at `http://127.0.0.1:5178/`; production preview runs at
+`http://127.0.0.1:4178/`. Both use strict ports and fail explicitly if occupied,
+so this project does not silently move to a different app's usual development
+port. If the development server stops, restart it and refresh the tab before
+choosing a PDF. A failed editor-module load shows a recoverable error message.
+
 The compiled `dist/` folder can be served by any static HTTPS server. Use `localhost` for development because browser cryptography requires a secure context. All dependencies and fonts are served from the same origin. No external CDN is required.
 
 ## Privacy and signing scope
@@ -42,7 +48,7 @@ Tests cover placement transforms for all four page rotations and a non-zero crop
 
 Rendered-PDF pixel tests confirm visible placements on 0°, 90°, 180°, and 270° pages. The production export worker is also exercised in an isolated Node worker runtime with network access disabled.
 
-No browser interaction or visual screenshot QA has been performed. Validate the full browser journey in target browsers before treating compatibility as established. Optional WebMCP page navigation is feature-detected; it does not expose document contents or keys. Its host-specific registration has not been verified.
+Focused in-app browser checks cover choosing a PDF, adding a signature and date, downloading the result, and recovering from a failed editor-module load. Broader cross-browser and visual screenshot QA have not been performed. Optional WebMCP page navigation is feature-detected; it does not expose document contents or keys. Its host-specific registration has not been verified.
 
 ## AWS deployment
 
